@@ -1,0 +1,52 @@
+.search {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  color: white;
+  text-transform: uppercase;
+
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    .search-icon {
+      font-size: 2rem;
+      cursor: pointer;
+      color: rgb(255, 255, 255);
+      margin-bottom: 1rem; /* Space below the icon */
+      transition: color 0.3s ease; /* Smooth color transition */
+
+      &:hover {
+        color: rgb(255, 200, 0); /* Color on hover */
+      }
+    }
+
+    .pokemon-searchbar {
+      
+      display: none; /* Initially hidden */
+      background-color: rgba(255, 255, 255, 0.125);
+      outline: none;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      width: 80%; /* Adjust width as needed */
+      height: 9%;
+      color: white;
+      font-size: 1.3rem;
+      padding: 0.4rem;
+      transition: all 0.3s ease; /* Smooth transition for visibility */
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.779); /* Placeholder color */
+      }
+    }
+
+    /* Class to show the search bar */
+    .search-active {
+      display: block; /* Show when active */
+    }
+  }
+}
+
+
+
