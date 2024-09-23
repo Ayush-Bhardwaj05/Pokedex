@@ -1,48 +1,3 @@
-// footer {
-//     display: grid;
-//     grid-template-columns: 5rem auto 5rem;
-//     border-top: 0.5px solid rgba(255, 255, 255, 0.203);
-//     .block {
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-//       color: #e21b5a;
-//       svg {
-//         cursor: pointer;
-//         font-size: 2.5rem;
-//       }
-//     }
-//     .data {
-//       margin: 0px;
-//       border: 0.5px solid rgba(255, 255, 255, 0.203);
-//       border-top: none;
-//       border-bottom: none;
-//       ul {
-//         display: grid;
-//         grid-template-columns: (1fr 1fr 1fr 1fr);
-//         height: 100%;
-//         list-style-type: none;
-//         li {
-//           color: white;
-//           text-transform: uppercase;
-//           font-weight: 500;
-//           letter-spacing: 0.2rem;
-//           display: flex;
-//           justify-content: center;
-//           align-items: center;
-//           cursor: pointer;
-//           transition: 0.3s ease-in-out;
-//           &:hover {
-//             background-color: var(--accent-color);
-//           }
-//         }
-//         .active {
-//           background-color: var(--accent-color);
-//         }
-//       }
-//     }
-//   }
-
 footer {
   display: grid;
   grid-template-columns: 5rem auto 5rem;
@@ -101,13 +56,13 @@ footer {
 
     .block {
       svg {
-        font-size: 2rem; // Smaller icon size for medium screens
+        font-size: 2rem;
       }
     }
 
     .data {
       ul {
-        grid-template-columns: repeat(2, 1fr); // Fewer columns for medium screens
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   }
@@ -115,15 +70,15 @@ footer {
 
 @media screen and (max-width: 480px) {
   footer {
-    grid-template-columns: 1fr; // Stack elements vertically for small screens
+    grid-template-columns: 1fr;
 
     .block {
-      margin-bottom: 1rem; // Add space below blocks
+      margin-bottom: 1rem;
     }
 
     .data {
       ul {
-        grid-template-columns: 1fr; // Single column for small screens
+        grid-template-columns: 1fr;
       }
     }
   }

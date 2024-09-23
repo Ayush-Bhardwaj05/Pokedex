@@ -21,7 +21,7 @@ function PokemonCardGrid({ pokemons }: { pokemons: userPokemonsType[] }) {
         {pokemons &&
           pokemons.length > 0 &&
           pokemons?.map((data: userPokemonsType) => {
-            const image = data.image || "path_to_fallback_image"; // Fallback in case image is undefined
+            const image = data.image || "path_to_fallback_image"; 
             return (
               <div key={data.id} className="pokemon-card">
                 <div className="pokemon-card-list">
@@ -61,7 +61,7 @@ function PokemonCardGrid({ pokemons }: { pokemons: userPokemonsType[] }) {
                 </div>
                 <h3 className="pokemon-card-title">{data.name}</h3>
                 <img
-                  src={image} // Use the fallback image if the data.image is undefined
+                  src={image} 
                   alt={data.name}
                   className="pokemon-card-image"
                   loading="lazy"

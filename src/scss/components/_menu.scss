@@ -5,7 +5,7 @@
       font-size: 2rem;
       cursor: pointer;
       color: white;
-      margin: 1rem; // Adjust positioning as needed
+      margin: 1rem;
     }
   
     .menu {
@@ -30,10 +30,9 @@
     }
   }
   
-  // Add media query for responsiveness
   @media (min-width: 768px) {
     .hamburger-menu {
-      display: none; // Hide on larger screens
+      display: none;
     }
   }
   

@@ -1,6 +1,5 @@
 import React from "react";
-import { Spinner } from "react-bootstrap"; // or any other spinner/SVG
-
+import { Spinner } from "react-bootstrap";
 const Loader = () => {
   return (
     <div className="loader">

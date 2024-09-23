@@ -5,7 +5,6 @@ import {
 } from "../../utils/Types";
 import { getInitialPokemonData } from "../reducers/getInitialPokemonData";
 import { getPokemonsData } from "../reducers/getPokemonsData";
-import { MdRemoveFromQueue } from "react-icons/md";
 import { getUserPokemons } from "../reducers/getUserPokemons";
 import { removePokemon } from "../reducers/removePokemonFromUserList";
 

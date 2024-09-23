@@ -13,7 +13,7 @@ import { toast, ToastOptions, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useAppDispatch, useAppSelector } from "./app/hooks";
 import { clearToasts, setUserStatus } from "./app/slices/AppSlice";
-import { onAuthStateChanged, updateCurrentUser } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import { firebaseAuth } from "./utils/FirebaseConfig";
 import HamburgerMenu from "./components/HamburgerMenu";
 export default function App() {
@@ -55,7 +55,7 @@ export default function App() {
             <Route element={<About />} path="/about" />
             <Route element={<Compare />} path="/compare" />
             <Route element={<Pokemon />} path="/pokemon/:id" />
-            <Route element={<Navigate to="/pokemon/1" />} path="*" />
+            <Route element={<Navigate to="/search" />} path="*" />
           </Routes>
           <Footer />
           <ToastContainer />

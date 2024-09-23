@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import pokeballIcon from "../assets/pokeball-icon.png";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {

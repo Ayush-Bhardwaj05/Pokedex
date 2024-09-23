@@ -7,16 +7,18 @@ function Evolution() {
   const dispatch = useAppDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   const pokemonData = useAppSelector(({ pokemon }) => pokemon);
-  const { currentPokemon } = useAppSelector(({ pokemon }) => pokemon);
+  const { currentPokemon } = pokemonData;
 
   useEffect(() => {
-    const fetchData = async () => {
-      const pokemons = currentPokemon?.evolution.map(({ pokemon }) => pokemon);
-      await dispatch(getPokemonsData(pokemons!));
-      setIsLoaded(true);
-    };
-    fetchData();
-  }, [dispatch, pokemonData.currentPokemon]);
+    if (currentPokemon?.evolution) {
+      const fetchData = async () => {
+        const pokemons = currentPokemon.evolution.map(({ pokemon }) => pokemon);
+        await dispatch(getPokemonsData(pokemons));
+        setIsLoaded(true);
+      };
+      fetchData();
+    }
+  }, [dispatch, currentPokemon]);
 
   return (
     <div className="page">
