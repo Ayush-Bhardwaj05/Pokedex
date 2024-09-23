@@ -1,8 +1,22 @@
-.compare {
+// .compare {
+//     display: grid;
+//     grid-template-columns: 49% 49%;
+//     height: 100%;
+//     width: 100%;
+//     gap: 1rem;
+//     padding: 1rem;
+//   }
+
+  .compare {
     display: grid;
-    grid-template-columns: 49% 49%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     height: 100%;
     width: 100%;
     gap: 1rem;
     padding: 1rem;
+  
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
   }
+  

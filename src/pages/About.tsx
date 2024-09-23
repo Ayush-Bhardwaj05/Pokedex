@@ -1,6 +1,6 @@
 import React from "react";
 import Wrapper from "../section/Wrapper";
-import avatarImage from "../assets/pikachu.png";
+import avatarImage from "../assets/ayush.png";
 import { FaYoutube, FaGithub, FaLinkedin } from "react-icons/fa";
 
 function About() {

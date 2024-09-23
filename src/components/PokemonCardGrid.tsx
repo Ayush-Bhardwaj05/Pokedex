@@ -1,99 +1,14 @@
-// import React from "react";
-// import { IoGitCompare } from "react-icons/io5";
-// import { FaPlus, FaTrash } from "react-icons/fa";
-// import { addToCompare } from "../app/slices/PokemonSlice";
-// import { useAppDispatch } from "../app/hooks";
-// import { pokemonTypeInterface, userPokemonsType } from "../utils/Types";
-// import { useLocation, useNavigate } from "react-router-dom";
-// import { setToast } from "../app/slices/AppSlice";
-// import { addPokemonToList } from "../app/reducers/addPokemonToList";
-
-// function PokemonCardGrid({ pokemons }: { pokemons: userPokemonsType[] }) {
-//   const location = useLocation();
-//   const navigate = useNavigate();
-//   const dispatch = useAppDispatch();
-
-//   return (
-//     <div className="pokemon-card-grid-container">
-//       <div className="pokemon-card-grid">
-//         {pokemons &&
-//           pokemons.length > 0 &&
-//           pokemons?.map((data: userPokemonsType) => {
-//             // Use fallback image if data.image is not available
-//             // const image = data.image || "path_to_fallback_image";
-
-//             return (
-//               <div className="pokemon-card" key={data.id}>
-//                 <div className="pokemon-card-list">
-//                   {location.pathname.includes("/pokemon") ||
-//                   location.pathname.includes("/search") ? (
-//                     <FaPlus
-//                       className="plus"
-//                       onClick={() => dispatch(addPokemonToList(data))}
-//                     />
-//                   ) : (
-//                     <FaTrash className="trash" />
-//                   )}
-//                 </div>
-//                 <div className="pokemon-card-compare">
-//                   <IoGitCompare
-//                     onClick={() => {
-//                       dispatch(addToCompare(data));
-//                       dispatch(
-//                         setToast(
-//                           `${data.name} Pokemon has been added to compare queue`
-//                         )
-//                       );
-//                     }}
-//                   />
-//                 </div>
-//                 <h3 className="pokemon-card-title">{data.name}</h3>
-//                 <img
-//                   src={data.image}
-//                   alt="pokemon"
-//                   className="pokemon-card-image"
-//                   loading="lazy"
-//                   onClick={() => navigate(`/pokemon/${data.id}`)}
-//                 />
-//                 <div className="pokemon-card-types">
-//                   {data.types.map(
-//                     (type: pokemonTypeInterface, index: number) => {
-//                       const keys = Object.keys(type);
-//                       return (
-//                         <div className="pokemon-card-types-type" key={index}>
-//                           <img
-//                             src={type[keys[0]].image}
-//                             alt="pokemon type"
-//                             className="pokemon-card-types-type-image"
-//                             loading="lazy"
-//                           />
-//                           <h6 className="pokemon-card-types-type-text">
-//                             {keys[0]}
-//                           </h6>
-//                         </div>
-//                       );
-//                     }
-//                   )}
-//                 </div>
-//               </div>
-//             );
-//           })}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default PokemonCardGrid;
 import React from "react";
 import { IoGitCompare } from "react-icons/io5";
 import { FaTrash, FaPlus } from "react-icons/fa";
-import { addToCompare } from "../app/slices/PokemonSlice";
+import { addToCompare, setCurrentPokemon } from "../app/slices/PokemonSlice";
 import { useAppDispatch } from "../app/hooks";
-import { useLocation, useNavigate } from "react-router-dom";
-import { setToast } from "../app/slices/AppSlice";
+import { setPokemonTab, setToast } from "../app/slices/AppSlice";
 import { addPokemonToList } from "../app/reducers/addPokemonToList";
 import { pokemonTypeInterface, userPokemonsType } from "../utils/Types";
 import { removePokemon } from "../app/reducers/removePokemonFromUserList";
+import { pokemonTabs } from "../utils/Constants";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function PokemonCardGrid({ pokemons }: { pokemons: userPokemonsType[] }) {
   const dispatch = useAppDispatch();
@@ -125,7 +40,9 @@ function PokemonCardGrid({ pokemons }: { pokemons: userPokemonsType[] }) {
                       className="trash"
                       onClick={async () => {
                         await dispatch(removePokemon({ id: data.firebaseId! }));
-                        dispatch(setToast(`${data.name} Removed Successfully.`));
+                        dispatch(
+                          setToast(`${data.name} Removed Successfully.`)
+                        );
                       }}
                     />
                   )}
@@ -149,8 +66,8 @@ function PokemonCardGrid({ pokemons }: { pokemons: userPokemonsType[] }) {
                   className="pokemon-card-image"
                   loading="lazy"
                   onClick={() => {
-                    // dispatch(setPokemonTab(pokemonTabs.description));
-                    // dispatch(setCurrentPokemon(undefined));
+                    dispatch(setPokemonTab(pokemonTabs.description));
+                    dispatch(setCurrentPokemon(undefined));
                     navigate(`/pokemon/${data.id}`);
                   }}
                 />
@@ -186,4 +103,3 @@ function PokemonCardGrid({ pokemons }: { pokemons: userPokemonsType[] }) {
 }
 
 export default PokemonCardGrid;
-

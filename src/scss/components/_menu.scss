@@ -1,0 +1,39 @@
+.hamburger-menu {
+    position: relative;
+  
+    .hamburger-icon {
+      font-size: 2rem;
+      cursor: pointer;
+      color: white;
+      margin: 1rem; // Adjust positioning as needed
+    }
+  
+    .menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.125);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      z-index: 100;
+  
+      a {
+        display: block;
+        color: white;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+  
+        &:hover {
+          background-color: var(--accent-color);
+        }
+      }
+    }
+  }
+  
+  // Add media query for responsiveness
+  @media (min-width: 768px) {
+    .hamburger-menu {
+      display: none; // Hide on larger screens
+    }
+  }
+  

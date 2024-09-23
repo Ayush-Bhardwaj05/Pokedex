@@ -1,3 +1,53 @@
+// .search {
+//   height: 100%;
+//   width: 100%;
+//   max-width: 100%;
+//   color: white;
+//   text-transform: uppercase;
+
+//   .search-container {
+//     position: relative;
+//     display: flex;
+//     align-items: center;
+//     gap: 2rem;
+//     .search-icon {
+//       font-size: 2rem;
+//       cursor: pointer;
+//       color: rgb(255, 255, 255);
+//       margin-bottom: 1rem; /* Space below the icon */
+//       transition: color 0.3s ease; /* Smooth color transition */
+
+//       &:hover {
+//         color: rgb(255, 200, 0); /* Color on hover */
+//       }
+//     }
+
+//     .pokemon-searchbar {
+      
+//       display: none; /* Initially hidden */
+//       background-color: rgba(255, 255, 255, 0.125);
+//       outline: none;
+//       border: none;
+//       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+//       width: 80%; /* Adjust width as needed */
+//       height: 9%;
+//       color: white;
+//       font-size: 1.3rem;
+//       padding: 0.4rem;
+//       transition: all 0.3s ease; /* Smooth transition for visibility */
+
+//       &::placeholder {
+//         color: rgba(255, 255, 255, 0.779); /* Placeholder color */
+//       }
+//     }
+
+//     /* Class to show the search bar */
+//     .search-active {
+//       display: block; /* Show when active */
+//     }
+//   }
+// }
+
 .search {
   height: 100%;
   width: 100%;
@@ -10,43 +60,70 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+
     .search-icon {
       font-size: 2rem;
       cursor: pointer;
       color: rgb(255, 255, 255);
-      margin-bottom: 1rem; /* Space below the icon */
-      transition: color 0.3s ease; /* Smooth color transition */
+      margin-bottom: 1rem;
+      transition: color 0.3s ease;
 
       &:hover {
-        color: rgb(255, 200, 0); /* Color on hover */
+        color: rgb(255, 200, 0);
       }
     }
 
     .pokemon-searchbar {
-      
-      display: none; /* Initially hidden */
+      display: none;
       background-color: rgba(255, 255, 255, 0.125);
       outline: none;
       border: none;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      width: 80%; /* Adjust width as needed */
+      width: 80%;
       height: 9%;
       color: white;
       font-size: 1.3rem;
       padding: 0.4rem;
-      transition: all 0.3s ease; /* Smooth transition for visibility */
+      transition: all 0.3s ease;
 
       &::placeholder {
-        color: rgba(255, 255, 255, 0.779); /* Placeholder color */
+        color: rgba(255, 255, 255, 0.779);
       }
     }
 
-    /* Class to show the search bar */
     .search-active {
-      display: block; /* Show when active */
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .search-container {
+      gap: 1rem;
+
+      .search-icon {
+        font-size: 1.5rem; // Adjust icon size for smaller screens
+      }
+
+      .pokemon-searchbar {
+        font-size: 1.1rem; // Adjust font size for the search bar
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .search-container {
+      flex-direction: column; // Stack elements vertically
+      align-items: flex-start; // Align to the start
+
+      .search-icon {
+        margin-bottom: 0.5rem; // Reduce space below the icon
+      }
+
+      .pokemon-searchbar {
+        width: 100%; // Full width on very small screens
+      }
     }
   }
 }
-
 
 

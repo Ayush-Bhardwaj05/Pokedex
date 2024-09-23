@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
-import Navbar from "./components/Navbar";
-import Wrapper from "./section/Wrapper";
-import Footer from "./components/Footer";
+import Navbar from "./section/Navbar";
+import Footer from "./section/Footer";
 import Background from "./components/Background";
 import "./scss/index.scss";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
@@ -16,6 +15,7 @@ import { useAppDispatch, useAppSelector } from "./app/hooks";
 import { clearToasts, setUserStatus } from "./app/slices/AppSlice";
 import { onAuthStateChanged, updateCurrentUser } from "firebase/auth";
 import { firebaseAuth } from "./utils/FirebaseConfig";
+import HamburgerMenu from "./components/HamburgerMenu";
 export default function App() {
   const { toasts } = useAppSelector(({ app }) => app);
   const dispatch = useAppDispatch();
@@ -48,6 +48,7 @@ export default function App() {
       <BrowserRouter>
         <div className="app">
           <Navbar />
+          <HamburgerMenu />
           <Routes>
             <Route element={<Search />} path="/search" />
             <Route element={<MyList />} path="/list" />

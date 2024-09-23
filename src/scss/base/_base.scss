@@ -1,14 +1,45 @@
+// @use "sass:color";
+
+// @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;700&display=swap");
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+// body {
+//   font-family: "Raleway", sans-serif;
+//   background-color: black;
+// }
+// .page{
+//   height: 100%;
+//   width: 100%;
+// }
+
+// #root {
+//   $accent-color: #f51313;
+//   --accent-color-dark: color.scale($accent-color, $lightness: -30%);
+// }
+
+// :root {
+// }
 @use "sass:color";
 
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Raleway", sans-serif;
   background-color: black;
+}
+
+.page {
+  height: 100%;
+  width: 100%;
 }
 
 #root {
@@ -16,5 +47,23 @@ body {
   --accent-color-dark: color.scale($accent-color, $lightness: -30%);
 }
 
-:root {
+// Media Queries for Responsiveness
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 90%; // Adjust base font size for smaller screens
+  }
+
+  .page {
+    padding: 1rem; // Add padding for smaller devices
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 80%; // Further decrease base font size for mobile
+  }
+
+  .page {
+    padding: 0.5rem; // Less padding for very small screens
+  }
 }

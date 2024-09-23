@@ -1,13 +1,38 @@
+// .background {
+//     z-index: -1;
+//     position: absolute;
+//     max-height: 100vh;
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr;
+//     gap: 2rem;
+//     img {
+//       max-inline-size: 100%;
+//       block-size: auto;
+//       height: 20rem;
+//     }
+//   }
+
 .background {
-    z-index: -1;
-    position: absolute;
-    max-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
-    img {
-      max-inline-size: 100%;
-      block-size: auto;
-      height: 20rem;
+  z-index: -1;
+  position: absolute;
+  max-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+
+  img {
+    max-inline-size: 100%;
+    block-size: auto;
+    height: 20rem;
+    object-fit: cover; // Ensure images maintain aspect ratio
+
+    // Media Queries for Responsiveness
+    @media screen and (max-width: 768px) {
+      height: 15rem; // Reduce image height on smaller screens
+    }
+
+    @media screen and (max-width: 480px) {
+      height: 10rem; // Further reduce height for mobile
     }
   }
+}

@@ -1,7 +1,19 @@
+// .list {
+//     height: 100%;
+//     width: 100%;
+//     max-width: 100%;
+//     color: white;
+//     text-transform: uppercase;
+//   }
 .list {
-    height: 100%;
-    width: 100%;
-    max-width: 100%;
-    color: white;
-    text-transform: uppercase;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  color: white;
+  text-transform: uppercase;
+  
+  @media screen and (max-width: 768px) {
+    padding: 1rem; // Add padding for smaller screens
+    font-size: 0.9rem; // Adjust font size for better readability
   }
+}
