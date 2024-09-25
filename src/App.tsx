@@ -55,7 +55,7 @@ export default function App() {
             <Route element={<About />} path="/about" />
             <Route element={<Compare />} path="/compare" />
             <Route element={<Pokemon />} path="/pokemon/:id" />
-            <Route element={<Navigate to="/search" />} path="*" />
+            <Route element={<Navigate to="/pokemon/1" />} path="*" />
           </Routes>
           <Footer />
           <ToastContainer />
