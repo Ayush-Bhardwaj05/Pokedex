@@ -137,6 +137,5 @@ To run the project locally, you will need to install the following dependencies:
 - **Frontend**: React.js, styled-components
 - **Backend**: Firebase (for authentication and database)
 - **UI/UX**: Responsive design principles
-Here's the corrected `README.md` for your Pokedex project with an updated Table of Contents:
 
 ---
